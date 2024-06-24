@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - TechCon 2024</title>
+    <title>Contact Us - TechCon 2024</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link your CSS file -->
     <style>
+        /* Optional inline styles */
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
         }
-        header, footer {
-            background-color: #343a40;
+        header {
+            background-color: #333;
             color: #fff;
-            padding: 10px 0;
-            text-align: center;
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
-            text-align: center;
+            margin: 0;
         }
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin-right: 10px;
         }
         nav ul li a {
             color: #fff;
@@ -31,29 +37,63 @@
         }
         main {
             padding: 20px;
-            text-align: center;
         }
-        form {
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .contact-info h2 {
+            font-size: 1.5em;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .social-media {
+            margin-bottom: 20px;
+        }
+        .social-media a {
             display: inline-block;
-            text-align: left;
-            margin-top: 20px;
+            margin-right: 10px;
         }
-        label {
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form label {
             display: block;
-            margin-top: 10px;
+            margin-bottom: 10px;
         }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-        button {
-            margin-top: 20px;
+        .contact-form textarea {
+            height: 150px;
+        }
+        .contact-form button {
             padding: 10px 20px;
-            background-color: #343a40;
+            background-color: #333;
             color: #fff;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -69,23 +109,45 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section>
-            <h2>Get in Touch</h2>
-            <form action="#" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email Address:</label>
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:info@techcon2024.com">info@techcon2024.com</a></p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <!-- Add more contact information as needed -->
+        </section>
+
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com/techcon2024" target="_blank">Facebook</a>
+            <a href="https://twitter.com/techcon2024" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/company/techcon2024" target="_blank">LinkedIn</a>
+            <!-- Add more social media links as needed -->
+        </section>
+
+        <section class="map">
+            <h2>Conference Venue</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.507182829956!2d-122.41962308479565!3d37.77492957975343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580e6b00f33bb%3A0xf8a74913cc605c90!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1630483924412!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="submit_contact.php" method="post">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                
+
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
+                <textarea id="message" name="message" required></textarea>
+
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 TechCon. All rights reserved.</p>
     </footer>
